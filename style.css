@@ -1,0 +1,322 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff9800;
+}
+
+.cart-icon {
+    cursor: pointer;
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.cart-icon span {
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #ff5722, #ff9800);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background-color: white;
+    color: #ff5722;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #ffe0b2;
+    transform: scale(1.05);
+}
+
+/* Productos */
+.productos {
+    padding: 5rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.productos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+/* Animaciones */
+.hero.animate-hero {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.product-card.animate-card {
+    animation: fadeUp 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff5722;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    font-size: 1rem;
+}
+/* Tarjetas de productos */
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 1rem;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #777;
+    margin: 0.5rem 0;
+}
+
+.product-card button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #e64a19;
+}
+
+/* Formulario de contacto */
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contacto input, .contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.contacto button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contacto button:hover {
+    background-color: #e64a19;
+}
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #f9f9f9;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(to right, #333, #555);
+}
+
+body.dark-mode .product-card {
+    background-color: #1e1e1e;
+    color: #f9f9f9;
+}
+
+body.dark-mode .product-card button {
+    background-color: #ff9800;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+/* Botón de modo oscuro */
+.toggle-dark-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 1000;
+}
+
+.toggle-dark-mode:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+/* Separadores decorativos */
+.section-separator {
+    height: 4px;
+    background: linear-gradient(to right, #ff5722, #ff9800);
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+/* Footer mejorado */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+footer .social-icons {
+    margin-top: 1rem;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #ff9800;
+}
+
